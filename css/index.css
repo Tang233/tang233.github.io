@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+body ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body ul li {
+  list-style: none;
+  margin: 20px;
+  padding: 10px;
+  border: grey solid 2px;
+}
+body ul li a {
+  text-decoration: none;
+}
+body .page {
+  width: 1000px;
+  height: 500px;
+  background: lightblue;
+  border: grey solid 2px;
+  display: none;
+}
+body .page.page-current {
+  display: block;
+}
+
+/*# sourceMappingURL=index.css.map */

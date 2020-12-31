@@ -2,9 +2,51 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Jin's webisite</title>
   </head>
   <body>
-    
+    <nav>
+      <ul>
+        <li><a href="#page-1" class="navigation">Home</a></li>
+        <li><a href="#page-2" class="navigation">About</a></li>
+        <li><a href="#page-3" class="navigation">Resume</a></li>
+        <li><a href="#page-4" class="navigation">Contact</a></li>
+        <li><a href="#page-5" class="navigation">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div id="page-1" class="page">Home</div>
+    <div id="page-2" class="page">About</div>
+    <div id="page-3" class="page">Resume</div>
+    <div id="page-4" class="page">Contact</div>
+    <div id="page-5" class="page">Blog</div>
+
+
+    <script type="text/javascript">
+      function switchPage(){
+        var hash=location.hash;
+        var currentPage=document.querySelector('.page-current');
+        if(currentPage){
+          currentPage.classList.remove('page-current');
+        }
+        if(hash){
+          var page =document.querySelector(hash);
+          page.classList.add('page-current');
+        }else{
+          var allPages = document.querySelectorAll('.page')
+          allPages[0].classList.add('page-current')
+        }
+      }
+
+      window.onload = function(){
+        if(location.hash){
+          switchPage();
+        }
+      }
+
+      window.onhashchange = switchPage
+
+    </script>
   </body>
 </html>
