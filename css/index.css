@@ -2,28 +2,32 @@ body {
   padding: 0;
   margin: 0;
 }
-body ul {
+
+ul {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body ul li {
+ul li {
   list-style: none;
   margin: 20px;
   padding: 10px;
-  border: grey solid 2px;
 }
-body ul li a {
+ul li a {
   text-decoration: none;
+  cursor: pointer;
 }
-body .page {
+
+.page {
+  margin: auto;
   width: 1000px;
   height: 500px;
   background: lightblue;
-  border: grey solid 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: none;
 }
-body .page.page-current {
+
+.page.page-current {
   display: block;
 }
 
