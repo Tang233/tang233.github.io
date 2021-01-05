@@ -1,6 +1,10 @@
 body {
   padding: 0;
   margin: 0;
+  background-image: url("https://scontent.fsyd3-1.fna.fbcdn.net/v/t1.0-9/135519967_247035163453180_9212745666392055373_o.jpg?_nc_cat=107&ccb=2&_nc_sid=730e14&_nc_ohc=Pal4rVDXhr0AX_9l37t&_nc_ht=scontent.fsyd3-1.fna&oh=352b38069f348d19246b03a5c1421814&oe=6018BC05");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 ul {
@@ -16,19 +20,172 @@ ul li {
 ul li a {
   text-decoration: none;
   cursor: pointer;
+  font-family: "Maven Pro", sans-serif;
+}
+ul li a:hover {
+  color: black;
+}
+ul li a:visited {
+  color: black;
 }
 
 .page {
-  margin: auto;
-  width: 1000px;
-  height: 500px;
-  background: lightblue;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: none;
 }
 
 .page.page-current {
   display: block;
+}
+
+.home__page {
+  position: relative;
+  margin: auto;
+  max-width: 700px;
+  height: 470px;
+  background-color: #fcf8ec;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+.home__page .box__left {
+  position: relative;
+  max-width: 350px;
+  height: 470px;
+  background-color: #B7CFDC;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+.home__page .box__left .personal__icon {
+  border-radius: 50%;
+  max-width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 28px;
+  left: 74px;
+}
+.home__page .box__left .personal__name {
+  position: absolute;
+  margin: auto;
+  top: 245px;
+  left: 118px;
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+}
+.home__page .box__left .dividing-line {
+  position: absolute;
+  top: 300px;
+  left: 138px;
+  width: 70px;
+  height: 3px;
+  background-color: #385E72;
+}
+.home__page .box__left .personal__role {
+  position: absolute;
+  top: 335px;
+  left: 115px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 17px;
+}
+.home__page .box__left .social__media__container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 350px;
+  height: 50px;
+  background-color: #fcf8ec;
+}
+.home__page .box__left .social__media__container > a {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  margin: 10px;
+}
+.home__page .box__left .social__media__container > a > img {
+  cursor: pointer;
+  width: 31px;
+  height: 31px;
+}
+.home__page .box__right {
+  position: relative;
+  max-width: 350px;
+  height: 470px;
+  left: 350px;
+  margin: 20px;
+}
+.home__page .box__right .right__heading {
+  position: absolute;
+  margin: 0;
+  top: 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 100px;
+}
+.home__page .box__right .right__content {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 185px;
+}
+.home__page .box__right .resume__button {
+  position: absolute;
+  top: 235px;
+  width: 135px;
+  height: 30px;
+  border: 1px solid #6AABD2;
+  background-color: #6AABD2;
+  border-radius: 50px;
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+.home__page .box__right .resume__button:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+.home__page .box__right .resume__button:hover > a {
+  color: black;
+  text-decoration: none;
+}
+.home__page .box__right .resume__button > a {
+  color: white;
+  text-decoration: none;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+}
+.home__page .box__right .service__button {
+  position: absolute;
+  top: 235px;
+  left: 150px;
+  width: 135px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+.home__page .box__right .service__button:hover {
+  background-color: #6AABD2;
+  border: 1px solid #6AABD2;
+}
+.home__page .box__right .service__button:hover > a {
+  color: white;
+  text-decoration: none;
+}
+.home__page .box__right .service__button > a {
+  color: black;
+  text-decoration: none;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+}
+.home__page .box__right .description__heading {
+  position: absolute;
+  top: 260px;
+  font-family: "Maven Pro", sans-serif;
+}
+.home__page .box__right .description {
+  position: absolute;
+  top: 310px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=index.css.map */
