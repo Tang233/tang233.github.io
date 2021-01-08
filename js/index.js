@@ -1,7 +1,13 @@
 function switchPage(){
-  var hash=location.hash;
-  var currentPage=document.querySelector('.page-current');
-  var targetPage = document.querySelector(hash);
+  let hash=location.hash;
+  let currentPage=document.querySelector('.page-current');
+  let targetPage;
+  if(location.hash){
+    targetPage = document.querySelector(hash);
+  }else{
+    //homepage
+    targetPage = document.querySelectorAll('.page')[0];
+  }
   if(currentPage){
     currentPage.classList.remove('page-current');
   }
@@ -9,7 +15,7 @@ function switchPage(){
     targetPage.classList.add('page-current');
   }else{
     // exception hash value: can jump to 404 not found page.
-    var allPages = document.querySelectorAll('.page')
+    var allPages = document.querySelectorAll('.page') 
     allPages[0].classList.add('page-current')
   }
 }
