@@ -1,3 +1,21 @@
+
+$smallWidth:680px;
+$mediumWidth:1080px;
+@mixin mediaQuery($deviceSize){
+  @if $deviceSize == smallSize{
+    @media only screen and (max-width:$smallWidth){
+      @content;
+    }
+  }
+  @else if $deviceSize == mediumSize{
+    @media only screen and (max-width:$mediumWidth){
+      @content;
+    }
+  }
+  @else if $deviceSize == largeSize{
+    @content;
+  }
+}
 body{
   padding: 0;
   margin: 0;
@@ -41,16 +59,18 @@ ul{
 }
 
 //Home Page------------------------------------------------------------------------------
-.home__page{
+.home-page{
   position: relative;
   margin: auto;
-  max-width: 700px;
+  min-width: 700px;
   height: 470px;
   background-color: #fcf8ec;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     .box__left{
+      display: inline-block;
+
       position: relative;
-      max-width: 350px;
+      width: 50%;
       height:470px;
       background-color: #B7CFDC;
       box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
@@ -108,11 +128,12 @@ ul{
         }
     }
     .box__right{
-      position: relative;
-      max-width: 350px;
-      height:470px;
+      display: inline-block;
+      position: absolute;
+      min-width: 320px;
+      height: 470px;
       left: 350px;
-      margin: 20px;
+      margin-left: 20px;
         .right__heading{
           position: absolute;
           margin: 0;
@@ -204,32 +225,50 @@ ul{
     }
 }
 
-//Resume Page---------------------------------------------------------------------------------
-.resume__page{
-  margin: auto;
-  max-width:1000px;
-  height: 800px;
-  background-color: #fcf8ec;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-    .resume__heading{
-      max-width: 100%;
-      min-width: 20%;
-      height: 100px;
-      margin-top: 0;
-      padding-top: 20px;
-      text-align: center;
-      background-color: #6AABD2;
-      font:{
-        family: 'Poppins', sans-serif;
-        size: 50px;
-      }
+//---------------------------Resume Page---------------------------------------------------------------------------------
+#page-container{
+  display:flex;
+  justify-content: center;
+}
+.resume{
+  &__heading{
+    max-width: 100%;
+    min-width: 20%;
+    height: 100px;
+    margin-top: 0;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #6AABD2;
+    font:{
+      family: 'Poppins', sans-serif;
+      size: 50px;
     }
+  }
+  &-page{
+    max-width:1000px;
+    width:90%;
+    min-width: 480px;
+    margin-bottom: 50px;
+    min-height: 800px;
+    background-color: #fcf8ec;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  }
 // ---------------Education Information------------------
+  &__content{
+    display:flex;
+    flex-direction: row;
+    @include mediaQuery(mediumSize){
+      flex-direction: column;
+    }
+    &>div{
+      width:100%;
+      box-sizing: border-box;
+      margin-bottom:20px;
+    }
     .education__box{
-      max-width: 500px;
-      height: 700px;
+      min-height: 400px;
       top: 120px;
         .header__box{
           display: flex;
@@ -237,8 +276,7 @@ ul{
             .education__icon{
               width: 50px;
               height: 50px;
-              margin: 15px 15px 15px 50px;
-              background-color: #f5f5f5;
+              margin: 15px 15px 15px 25px;
             }
             .education__heading{
               margin: 10px;
@@ -249,96 +287,195 @@ ul{
                 }
             }
         }
-        //-------------Item--------------
-        .item__box{
-          max-width: 450px;
-          height: 515px;
-          margin-left: 50px;
+    }
+    //Project box
+    .project__box {
+      height: 700px;
+      top: 120px;
+      left: 500px;
+        .header__box {
           display: flex;
-          flex-direction: column;
-          border-left: 4px solid #B7CFDC;
-          .education__item{
-            position: relative;
-            max-width: 85%;
-            min-width: 80%;
-            height: 130px;
-            margin-top: 20px;
-            border-left: 4px solid #B7CFDC;
-            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
-            left: 50px;
-            &:hover{
-              box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
-            }
-            &::before {
-              content: '';
-              display: inline-block;
-              position: absolute;
-              left: -69px;
-              top: 30px;
-              width: 25px;
-              height: 25px;
-              border-radius: 50%;
-              background-color: #B7CFDC;
-            }
-            &::after{
-              content: '';
-              display: inline-block;
-              position: absolute;
-              top: 42px;
-              width: 45px;
-              height: 3px;
-              left: -47px;;
-              background-color: #B7CFDC;
-            }
-              .item__header{
-                position: absolute;
-                width: 300px;
-                height: 20px;
-                left: 10px;
-                margin-top: 15px;
-                font:{
-                  family: 'Maven Pro', sans-serif;
-                  size: 18px;
-                }
-              }
-              .item__period{
-                position: absolute;
-                display: inline-block;
-                top: 55px;
-                left: 10px;
-                width: 130px;
-                height: 20px;
-
-              }
-              .item__location{
-                position: absolute;
-                top: 55px;
-                left: 110px;
-                width: 250px;
-                height: 20px;
-                border-left: 3px solid #B7CFDC;
-                padding-left: 15px;
-              }
-              .item__description{
-                position: absolute;
-                top: 70px;
-                left: 10px;
-                width: 300px;
+          justify-content: flex-start;
+          .project__icon{
+            width: 45px;
+            height: 45px;
+            margin: 15px 15px 15px 25px;
+          }
+          .project__heading{
+            margin: 10px;
+            padding-top: 10px;
+              font:{
+                family: 'Maven Pro', sans-serif;
+                size: 30px;
               }
           }
         }
     }
-    //Project box
-    .project__box{
-      max-width: 500px;
-      height: 700px;
-      top: 120px;
-      left: 500px;
-      border: 2px solid black;
-        .header__box{
-          
+    //-------------Item--------------
+    .item__box{
+      height: 515px;
+      margin-left: 25px;
+      display: flex;
+      flex-direction: column;
+      border-left: 4px solid #B7CFDC;
+      .education__item{
+        position: relative;
+        max-width: 85%;
+        min-width: 80%;
+        height: 150px;
+        margin-top: 20px;
+        border-left: 4px solid #B7CFDC;
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+        left: 50px;
+        &:hover{
+          box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+        }
+        &::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: -69px;
+          top: 30px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background-color: #B7CFDC;
+        }
+        &::after{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 42px;
+          width: 45px;
+          height: 3px;
+          left: -47px;;
+          background-color: #B7CFDC;
+        }
+        .item__header{
+          position: absolute;
+          width: 300px;
+          height: 20px;
+          left: 10px;
+          margin-top: 15px;
+          font:{
+            family: 'Maven Pro', sans-serif;
+            size: 18px;
+          }
+        }
+        .item__period{
+          position: absolute;
+          display: inline-block;
+          top: 55px;
+          left: 10px;
+          width: 130px;
+          height: 20px;
+
+        }
+        .item__location{
+          position: absolute;
+          top: 55px;
+          left: 140px;
+          width: 250px;
+          height: 20px;
+          border-left: 3px solid #B7CFDC;
+          padding-left: 15px;
+        }
+        .item__description{
+          position: absolute;
+          top: 70px;
+          left: 10px;
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------Service Page----------------------------
+
+.service-page{
+  max-width:1000px;
+  width:90%;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    .service__box{
+        .box__heading{
+          max-width: 100%;
+          min-width: 20%;
+          height: 100px;
+          margin-top: 0;
+          padding-top: 20px;
+          text-align: center;
+          background-color: #6AABD2;
+          font:{
+            family: 'Poppins', sans-serif;
+            size: 50px;
+          }
+        }
+        .service__content{
+          max-width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 20px;
+          justify-content: space-around;
+            .service__card{
+              @include mediaQuery(mediumSize){
+                width:50%;
+              }
+              @include mediaQuery(smallSize){
+                width:100%;
+              }
+              width: 30%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+                .card__imgContainer{
+                    width: 125px;
+                    height: 125px;
+                    border-radius: 50%;
+                    background-color: #D9E4EC;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                      .card__img{
+                        width: 55px;
+                      }
+                }
+                .card__name{
+                  font:{
+                    family: 'Maven Pro', sans-serif;
+                  }
+                }
+                .card__content{
+                  padding: 0 30px;
+                  text-align: center;
+                  box-sizing: border-box;
+                }
+            }
         }
     }
-
-
+}
+.icon{
+  display:block;
+  width:20px;
+  height:20px;
+  &--email{
+    -webkit-mask:url(../asset/email-24px.svg) no-repeat center/contain;
+  }
+}
+//--------------------- Contact Page--------------------------------
+.contact-page{
+  max-width:1000px;
+  width:90%;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }

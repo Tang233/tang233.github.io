@@ -37,22 +37,23 @@ ul li a:visited {
   display: block;
 }
 
-.home__page {
+.home-page {
   position: relative;
   margin: auto;
-  max-width: 700px;
+  min-width: 700px;
   height: 470px;
   background-color: #fcf8ec;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }
-.home__page .box__left {
+.home-page .box__left {
+  display: inline-block;
   position: relative;
-  max-width: 350px;
+  width: 50%;
   height: 470px;
   background-color: #B7CFDC;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }
-.home__page .box__left .personal__icon {
+.home-page .box__left .personal__icon {
   border-radius: 50%;
   max-width: 200px;
   height: 200px;
@@ -60,7 +61,7 @@ ul li a:visited {
   top: 28px;
   left: 74px;
 }
-.home__page .box__left .personal__name {
+.home-page .box__left .personal__name {
   position: absolute;
   margin: auto;
   top: 245px;
@@ -68,7 +69,7 @@ ul li a:visited {
   font-family: "Poppins", sans-serif;
   font-size: 27px;
 }
-.home__page .box__left .dividing-line {
+.home-page .box__left .dividing-line {
   position: absolute;
   top: 300px;
   left: 138px;
@@ -76,14 +77,14 @@ ul li a:visited {
   height: 3px;
   background-color: #385E72;
 }
-.home__page .box__left .personal__role {
+.home-page .box__left .personal__role {
   position: absolute;
   top: 335px;
   left: 115px;
   font-family: "Maven Pro", sans-serif;
   font-size: 17px;
 }
-.home__page .box__left .social__media__container {
+.home-page .box__left .social__media__container {
   position: absolute;
   bottom: 0;
   display: flex;
@@ -93,39 +94,40 @@ ul li a:visited {
   height: 50px;
   background-color: #fcf8ec;
 }
-.home__page .box__left .social__media__container > a {
+.home-page .box__left .social__media__container > a {
   display: inline-block;
   width: 31px;
   height: 31px;
   margin: 10px;
 }
-.home__page .box__left .social__media__container > a > img {
+.home-page .box__left .social__media__container > a > img {
   cursor: pointer;
   width: 31px;
   height: 31px;
 }
-.home__page .box__right {
-  position: relative;
-  max-width: 350px;
+.home-page .box__right {
+  display: inline-block;
+  position: absolute;
+  min-width: 320px;
   height: 470px;
   left: 350px;
-  margin: 20px;
+  margin-left: 20px;
 }
-.home__page .box__right .right__heading {
+.home-page .box__right .right__heading {
   position: absolute;
   margin: 0;
   top: 30px;
   font-family: "Poppins", sans-serif;
   font-size: 100px;
 }
-.home__page .box__right .right__content {
+.home-page .box__right .right__content {
   font-family: "Maven Pro", sans-serif;
   font-size: 24px;
   font-weight: bold;
   position: absolute;
   top: 185px;
 }
-.home__page .box__right .resume__button {
+.home-page .box__right .resume__button {
   position: absolute;
   top: 235px;
   width: 135px;
@@ -136,21 +138,21 @@ ul li a:visited {
   cursor: pointer;
   transition-duration: 0.6s;
 }
-.home__page .box__right .resume__button:hover {
+.home-page .box__right .resume__button:hover {
   background-color: white;
   border: 1px solid black;
 }
-.home__page .box__right .resume__button:hover > a {
+.home-page .box__right .resume__button:hover > a {
   color: black;
   text-decoration: none;
 }
-.home__page .box__right .resume__button > a {
+.home-page .box__right .resume__button > a {
   color: white;
   text-decoration: none;
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
 }
-.home__page .box__right .service__button {
+.home-page .box__right .service__button {
   position: absolute;
   top: 235px;
   left: 150px;
@@ -162,42 +164,38 @@ ul li a:visited {
   cursor: pointer;
   transition-duration: 0.6s;
 }
-.home__page .box__right .service__button:hover {
+.home-page .box__right .service__button:hover {
   background-color: #6AABD2;
   border: 1px solid #6AABD2;
 }
-.home__page .box__right .service__button:hover > a {
+.home-page .box__right .service__button:hover > a {
   color: white;
   text-decoration: none;
 }
-.home__page .box__right .service__button > a {
+.home-page .box__right .service__button > a {
   color: black;
   text-decoration: none;
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
 }
-.home__page .box__right .description__heading {
+.home-page .box__right .description__heading {
   position: absolute;
   top: 260px;
   font-family: "Maven Pro", sans-serif;
 }
-.home__page .box__right .description {
+.home-page .box__right .description {
   position: absolute;
   top: 310px;
   font-family: "Maven Pro", sans-serif;
   font-size: 17px;
 }
 
-.resume__page {
-  margin: auto;
-  max-width: 1000px;
-  height: 800px;
-  background-color: #fcf8ec;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+#page-container {
+  display: flex;
+  justify-content: center;
 }
-.resume__page .resume__heading {
+
+.resume__heading {
   max-width: 100%;
   min-width: 20%;
   height: 100px;
@@ -208,49 +206,91 @@ ul li a:visited {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
 }
-.resume__page .education__box {
-  max-width: 500px;
-  height: 700px;
+.resume-page {
+  max-width: 1000px;
+  width: 90%;
+  min-width: 480px;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+.resume__content {
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 1080px) {
+  .resume__content {
+    flex-direction: column;
+  }
+}
+.resume__content > div {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.resume__content .education__box {
+  min-height: 400px;
   top: 120px;
 }
-.resume__page .education__box .header__box {
+.resume__content .education__box .header__box {
   display: flex;
   justify-content: flex-start;
 }
-.resume__page .education__box .header__box .education__icon {
+.resume__content .education__box .header__box .education__icon {
   width: 50px;
   height: 50px;
-  margin: 15px 15px 15px 50px;
-  background-color: #f5f5f5;
+  margin: 15px 15px 15px 25px;
 }
-.resume__page .education__box .header__box .education__heading {
+.resume__content .education__box .header__box .education__heading {
   margin: 10px;
   padding-top: 10px;
   font-family: "Maven Pro", sans-serif;
   font-size: 30px;
 }
-.resume__page .education__box .item__box {
-  max-width: 450px;
+.resume__content .project__box {
+  height: 700px;
+  top: 120px;
+  left: 500px;
+}
+.resume__content .project__box .header__box {
+  display: flex;
+  justify-content: flex-start;
+}
+.resume__content .project__box .header__box .project__icon {
+  width: 45px;
+  height: 45px;
+  margin: 15px 15px 15px 25px;
+}
+.resume__content .project__box .header__box .project__heading {
+  margin: 10px;
+  padding-top: 10px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 30px;
+}
+.resume__content .item__box {
   height: 515px;
-  margin-left: 50px;
+  margin-left: 25px;
   display: flex;
   flex-direction: column;
   border-left: 4px solid #B7CFDC;
 }
-.resume__page .education__box .item__box .education__item {
+.resume__content .item__box .education__item {
   position: relative;
   max-width: 85%;
   min-width: 80%;
-  height: 130px;
+  height: 150px;
   margin-top: 20px;
   border-left: 4px solid #B7CFDC;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   left: 50px;
 }
-.resume__page .education__box .item__box .education__item:hover {
+.resume__content .item__box .education__item:hover {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }
-.resume__page .education__box .item__box .education__item::before {
+.resume__content .item__box .education__item::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -261,7 +301,7 @@ ul li a:visited {
   border-radius: 50%;
   background-color: #B7CFDC;
 }
-.resume__page .education__box .item__box .education__item::after {
+.resume__content .item__box .education__item::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -271,7 +311,7 @@ ul li a:visited {
   left: -47px;
   background-color: #B7CFDC;
 }
-.resume__page .education__box .item__box .education__item .item__header {
+.resume__content .item__box .education__item .item__header {
   position: absolute;
   width: 300px;
   height: 20px;
@@ -280,7 +320,7 @@ ul li a:visited {
   font-family: "Maven Pro", sans-serif;
   font-size: 18px;
 }
-.resume__page .education__box .item__box .education__item .item__period {
+.resume__content .item__box .education__item .item__period {
   position: absolute;
   display: inline-block;
   top: 55px;
@@ -288,27 +328,106 @@ ul li a:visited {
   width: 130px;
   height: 20px;
 }
-.resume__page .education__box .item__box .education__item .item__location {
+.resume__content .item__box .education__item .item__location {
   position: absolute;
   top: 55px;
-  left: 110px;
+  left: 140px;
   width: 250px;
   height: 20px;
   border-left: 3px solid #B7CFDC;
   padding-left: 15px;
 }
-.resume__page .education__box .item__box .education__item .item__description {
+.resume__content .item__box .education__item .item__description {
   position: absolute;
   top: 70px;
   left: 10px;
   width: 300px;
 }
-.resume__page .project__box {
-  max-width: 500px;
-  height: 700px;
-  top: 120px;
-  left: 500px;
-  border: 2px solid black;
+
+.service-page {
+  max-width: 1000px;
+  width: 90%;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+.service-page .service__box .box__heading {
+  max-width: 100%;
+  min-width: 20%;
+  height: 100px;
+  margin-top: 0;
+  padding-top: 20px;
+  text-align: center;
+  background-color: #6AABD2;
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+}
+.service-page .service__box .service__content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
+}
+.service-page .service__box .service__content .service__card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 1080px) {
+  .service-page .service__box .service__content .service__card {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .service-page .service__box .service__content .service__card {
+    width: 100%;
+  }
+}
+.service-page .service__box .service__content .service__card .card__imgContainer {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  background-color: #D9E4EC;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.service-page .service__box .service__content .service__card .card__imgContainer .card__img {
+  width: 55px;
+}
+.service-page .service__box .service__content .service__card .card__name {
+  font-family: "Maven Pro", sans-serif;
+}
+.service-page .service__box .service__content .service__card .card__content {
+  padding: 0 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.icon--email {
+  -webkit-mask: url(../asset/email-24px.svg) no-repeat center/contain;
+}
+
+.contact-page {
+  max-width: 1000px;
+  width: 90%;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=index.css.map */
