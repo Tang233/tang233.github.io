@@ -68,7 +68,6 @@ ul{
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     .box__left{
       display: inline-block;
-
       position: relative;
       width: 50%;
       height:470px;
@@ -489,9 +488,11 @@ ul{
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      @include mediaQuery(mediumSize){
+        flex-direction: column;
+      }
         .contact__info{
-          width: 100%;
-          margin: 5px 35px;
+          margin: 35px;
           display: flex;
           flex-direction: column;
             h3{
@@ -504,26 +505,26 @@ ul{
                 color: #6AABD2;
               }
             }
+            .gmap_canvas {
+              overflow:hidden;
+              background:none !important;
+              height: 275px;
+              width: 100%;
+              #gmap_canvas{
+                @include mediaQuery(mediumSize){
+                  width:100%;
+                }
+              }
+            }
             .contact__item{
               width: 100%;
               display: flex;
               flex-direction: row;
-              padding: 0 10px;
-              .mapouter{
-                position:relative;
-                text-align:right;
-                height:275px;
-                width:440px;
-              }
-              .gmap_canvas {
-                overflow:hidden;
-                background:none !important;
-                height:275px;
-                width:440px;
-              }
+              padding: 10px;
               .icon{
                 width:20px;
                 height:20px;
+                margin-top: 5px;
                 &--location{
                   -webkit-mask:url(../asset/location_on-24px.svg) no-repeat center/contain;
                   background-color: black;
@@ -548,9 +549,9 @@ ul{
             }
         }
         .contact__form{
-          width: 100%;
           display: flex;
           flex-direction: column;
+          margin: 35px;
             h3{
               margin: 10px 0;
               font:{
@@ -565,12 +566,12 @@ ul{
               width: 100%;
               display: flex;
               flex-direction: column;
-              padding: 0 10px;
                 .item__box{
+                  position: relative;
                   display: flex;
                   flex-direction: row;
                   justify-content: flex-start;
-                  margin: 10px 10px;
+                  margin: 10px 0px;
                   .icon{
                     display: inline-block;
                     width:30px;
@@ -590,36 +591,94 @@ ul{
                     }
                   }
                   input{
+                    width:100%;
+                    outline:none;
                     border-style: none;
-                    &:hover{
-                      border-style: none;
-                      border-bottom: 1px solid black;
-                      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-                    }
-                    &:focus{
-                      border: 0px;
-                    }
+                    background-color:transparent;
+                    border-bottom: 1px solid #000000;
+                      &+.underline{
+                        position: absolute;
+                        width: 0%;
+                        bottom: 0;
+                        height: 2px;
+                        transition: 0.4s;
+                      }
+                      &:focus+.underline{
+                        width: 100%;
+                        background-color: #6AABD2;
+                        border: 1px solid #6AABD2;
+                      }
                   }
                   textarea{
+                    outline:none;
                     border: 0px;
-                    margin: 0 40px 0 3px;
+                    margin-left:3px;
                     width: 100%;
-                      &:hover{
-                        border-bottom: 1px solid black;
-                        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    background-color: transparent;
+                    border-bottom: 1px solid black;
+                      &+.underline{
+                        position: absolute;
+                        width: 0%;
+                        bottom: 0;
+                        height: 2px;
+                        transition: 0.4s;
                       }
-                      &:focus{
-                        border: 0px;
+                      &:focus+.underline{
+                        width: 100%;
+                        background-color: #6AABD2;
+                        border: 1px solid #6AABD2;
                       }
                   }
+
                 }
                 .button--submit{
+                  outline: none;
                   width: 35%;
                   height: 35px;
-                  border: 1px solid #6AABD2;
+                  margin: auto;
+                  border: 2px solid black;
+                  border-radius: 10px;
                   background-color: #fcf8ec;
+                  font:{
+                    family: 'Maven Pro', sans-serif;
+                    size:17px;
+                  }
+                  &:hover{
+                    border: 2px solid #6AABD2;
+                    background-color: #6AABD2;
+                    transition: 0.4s;
+                  }
                 }
               }
         }
+    }
+}
+
+
+//---------------------------Blog Page-------------------------
+.blog-page{
+  max-width:1000px;
+  width:90%;
+  margin-bottom: 50px;
+  min-height: 800px;
+  background-color: #fcf8ec;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    .blog__heading{
+      max-width: 100%;
+      min-width: 20%;
+      height: 100px;
+      margin-top: 0;
+      padding-top: 20px;
+      text-align: center;
+      background-color: #6AABD2;
+      font:{
+        family: 'Poppins', sans-serif;
+        size: 50px;
+      }
+    }
+    .item__box{
+
     }
 }

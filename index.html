@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="twitter:" content="">
+    <meta name="keywods" content="resume, html, css, js, sass">
+    <meta name="author" content="Jin">
     <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -182,11 +183,9 @@
       <div class="content__box">
         <div class="contact__info">
           <h3>Get in <span>Touch</span></h3>
-          <div class="mapouter">
             <div class="gmap_canvas">
               <iframe width="440" height="275" id="gmap_canvas" src="https://maps.google.com/maps?q=18%20Freeman%20Road,%20Chatswood,%20NSW&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-          </div>
           <div class="contact__item">
             <span class="icon icon--location"></span>
             <p>18 Freeman Rd, Chatswood</p>
@@ -206,27 +205,41 @@
         </div>
         <div class="contact__form">
           <h3>Contact <span>Form</span></h3>
-          <div class="form__item">
-            <div class="item__box">
-              <span class="icon icon--name"></span>
-              <input type="text" name="name" value="">
-            </div>
-            <div class="item__box">
-              <span class="icon icon--email"></span>
-              <input type="text" name="email" value="">
-            </div>
-            <div class="item__box">
-              <span class="icon icon--message"></span>
-              <textarea name="name" rows="8" cols="80"></textarea>
-            </div>
-            <button class="button--submit" type="button" name="submit">Submit</button>
+          <form action="https://formspree.io/f/xnqolgpo" method="POST">
+            <div class="form__item">
+              <div class="item__box">
+                <span class="icon icon--name"></span>
+                <input type="text" name="name" value="" placeholder=" Enter your name">
+                <span class="underline"></span>
+              </div>
+              <div class="item__box">
+                <span class="icon icon--email"></span>
+                <input type="text" name="_replyto" value="" placeholder="Enter your email address">
+                <span class="underline"></span>
+              </div>
+              <div class="item__box">
+                <span class="icon icon--message"></span>
+                <textarea name="message" rows="8" cols="80" placeholder="Enter email content"></textarea>
+                <span class="underline"></span>
+              </div>
+              <button class="button--submit" type="submit" name="submit">Submit</button>
           </div>
+        </form>
         </div>
       </div>
     </div>
 
-
-    <div id="page-5" class="page"></div>
+<!-- Blog Page -->
+    <div id="page-5" class="page blog-page">
+      <h2 class="blog__heading">Blog</h2>
+      <div class="item__box">
+        <div class="item">
+          <span class="item__mask">
+            <h3 class="item__heading">Coming Soon</h3>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
     <script src="js/index.js" charset="utf-8"></script>
   </body>
